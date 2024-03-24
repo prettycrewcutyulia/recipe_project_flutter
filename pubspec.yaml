@@ -1,0 +1,26 @@
+name: recipe_project_flutter
+description: "Recipe project"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_nav_bar: ^5.0.6
+  http: ^1.2.1
+  url_launcher: ^6.2.5
+  share_plus: ^8.0.2
+  hive_flutter: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
