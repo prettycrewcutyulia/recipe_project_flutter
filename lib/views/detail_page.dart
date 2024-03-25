@@ -21,7 +21,6 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    var box = Hive.box('saved');
 
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
@@ -74,32 +73,6 @@ class _DetailPageState extends State<DetailPage> {
                               icon: Icons.share,
                               label: 'Share',)
                         ),
-                        ValueListenableBuilder(
-                            valueListenable: box.listenable(),
-                            builder: (context, box, _) {
-                              var element = widget.item['label'];
-                              bool saved = box.containsKey(element);
-                              return GestureDetector(
-                                onTap: () {
-                                  saved? box.delete(element) : box.put(element, element);
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                     SnackBar(
-                                       duration: const Duration(seconds: 1),
-                                         content: Text(saved?'Recipe deleted':'Recipe saved')
-                                     )
-                                  );
-                                },
-                                child: saved ?
-                                const CircleButton(
-                                  icon: Icons.bookmark,
-                                  label: 'Saved',) :
-                                const CircleButton(
-                                  icon: Icons.bookmark_border,
-                                  label: 'Save',),
-                              );
-
-                            }
-                            ),
                         GestureDetector(
                           onTap: () {
                             ShowDetailDialog.showCalories(widget.item['totalNutrients'], context);
