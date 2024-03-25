@@ -35,7 +35,9 @@ class _DetailPageState extends State<DetailPage> {
             Container(
               height: height*.44,
               decoration: BoxDecoration(
-                image: DecorationImage(image: NetworkImage(widget.item['image']), fit: BoxFit.cover)
+                image: DecorationImage(
+                    image: NetworkImage(widget.item['image']),
+                    fit: BoxFit.cover)
               ),
             ),
             Positioned(
@@ -100,9 +102,6 @@ class _DetailPageState extends State<DetailPage> {
 
                             }
                             ),
-                        const CircleButton(
-                          icon: Icons.bookmark_border,
-                          label: 'Save',),
                         GestureDetector(
                           onTap: () {
                             ShowDetailDialog.showCalories(widget.item['totalNutrients'], context);
@@ -152,7 +151,7 @@ class _DetailPageState extends State<DetailPage> {
                               child: Container(
                                 color: Colors.white,
                                 child: Center(
-                                  child: Text("   6\n Items"),
+                                  child: Text("${widget.item['ingredients'].length}\n Items"),
                                 ),
                           ))
                         ],
@@ -165,9 +164,7 @@ class _DetailPageState extends State<DetailPage> {
                   ],
                 )
             ),
-        
           ],
-        
         ),
       ),
     );

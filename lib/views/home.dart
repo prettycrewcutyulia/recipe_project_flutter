@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_project_flutter/views/SavedPage.dart';
+import 'package:recipe_project_flutter/views/saved_page.dart';
 import 'package:recipe_project_flutter/views/home_page.dart';
 import 'package:recipe_project_flutter/views/search_page.dart';
 import 'package:recipe_project_flutter/views/shopping_page.dart';

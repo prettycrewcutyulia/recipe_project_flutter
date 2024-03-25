@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_project_flutter/services/network_service.dart';
+import 'package:recipe_project_flutter/views/detail_page.dart';
 
 import 'components/custom_app_bar.dart';
 
@@ -42,36 +43,46 @@ class AllRecipeScreen extends StatelessWidget {
                       children: [
                         Expanded(
                             flex: 3,
-                            child: Stack(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(20),
-                                    image: DecorationImage(
-                                        image: NetworkImage(snap['image']),
-                                      fit: BoxFit.cover
-                                    )
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute
+                                      (builder: (context)=>
+                                        DetailPage(item: snap))
+                                );
+                              },
+                              child: Stack(
+                                children: [
+
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey,
+                                      borderRadius: BorderRadius.circular(20),
+                                      image: DecorationImage(
+                                          image: NetworkImage(snap['image']),
+                                        fit: BoxFit.cover
+                                      )
+                                    ),
                                   ),
-                                ),
-                                Positioned(
-                                  top: 7,
-                                    left: 15,
-                                    child: Container(
-                                  height: 20,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child: Center(
-                                    child: Text("${snap['totalTime'].toInt()} min",
-                                      style: const TextStyle(
-                                        color: Colors.white
-                                      ),)
-                                  ),
-                                ))
-                              ],
+                                  Positioned(
+                                    top: 7,
+                                      left: 15,
+                                      child: Container(
+                                    height: 20,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child: Center(
+                                      child: Text("${snap['totalTime'].toInt()} min",
+                                        style: const TextStyle(
+                                          color: Colors.white
+                                        ),)
+                                    ),
+                                  ))
+                                ],
+                              ),
                             )
                         ),
                         Expanded(
