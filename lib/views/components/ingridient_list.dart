@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'ingredient_item.dart';
 
-class IngridientList extends StatelessWidget {
+class IngredientList extends StatelessWidget {
   final List<dynamic> ingredients;
-  const IngridientList({super.key, required this.ingredients});
+  const IngredientList({super.key, required this.ingredients});
 
   @override
   Widget build(BuildContext context) {

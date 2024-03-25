@@ -35,7 +35,7 @@ class ShowDetailDialog {
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10))
               ),
               child: Padding(
-               padding: EdgeInsets.symmetric(horizontal: 18),
+               padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:recipe_project_flutter/services/network_service.dart';
 import 'package:recipe_project_flutter/services/share_recipe_manager.dart';
@@ -86,16 +84,16 @@ class _DetailPageState extends State<DetailPage> {
                                   saved? box.delete(element) : box.put(element, element);
                                   ScaffoldMessenger.of(context).showSnackBar(
                                      SnackBar(
-                                       duration: Duration(seconds: 1),
-                                         content: Text("${saved?'Recipe deleted':'Recipe saved'}")
+                                       duration: const Duration(seconds: 1),
+                                         content: Text(saved?'Recipe deleted':'Recipe saved')
                                      )
                                   );
                                 },
                                 child: saved ?
-                                CircleButton(
+                                const CircleButton(
                                   icon: Icons.bookmark,
                                   label: 'Saved',) :
-                                CircleButton(
+                                const CircleButton(
                                   icon: Icons.bookmark_border,
                                   label: 'Save',),
                               );
@@ -121,7 +119,7 @@ class _DetailPageState extends State<DetailPage> {
                         onPressed: () {
                           NetworkService.startCooking(widget.item['url']);
                         },
-                        child: Text('Start')))
+                        child: const Text('Start')))
                     ],),
                     SizedBox(height: height*.02,),
                     Container(
@@ -157,7 +155,7 @@ class _DetailPageState extends State<DetailPage> {
                         ],
                       ),),
                     SizedBox(height: height*1.8,
-                    child: IngridientList(
+                    child: IngredientList(
                       ingredients: widget.item['ingredients'],
                     ),
                     ),

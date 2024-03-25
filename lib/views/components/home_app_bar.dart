@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class HomeAppBar extends StatelessWidget {
   final String title;
-  const HomeAppBar({required this.title});
+  const HomeAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

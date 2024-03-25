@@ -8,11 +8,10 @@ class ShoppingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     var box = Hive.box('shopping');
 
     return Scaffold(
-        appBar: CustomAppBar(title: 'Need to shop', back: false),
+        appBar: const CustomAppBar(title: 'Need to shop', back: false),
       body: ValueListenableBuilder(
           valueListenable: box.listenable(),
           builder: (context, box, _) {
@@ -24,7 +23,7 @@ class ShoppingPage extends StatelessWidget {
                     title: Container(
                       height: height*.085,
                       color: Colors.grey[100],
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         children: [
                           Expanded(

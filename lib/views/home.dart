@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_project_flutter/views/saved_page.dart';
 import 'package:recipe_project_flutter/views/home_page.dart';
 import 'package:recipe_project_flutter/views/search_page.dart';
 import 'package:recipe_project_flutter/views/shopping_page.dart';
@@ -41,7 +40,7 @@ class _HomeState extends State<Home> {
           currentIndex = index;
         });
       },
-        SelectedItem: currentIndex),
+        selectedItem: currentIndex),
       body: PageView(
         controller: pageController,
         onPageChanged: (index) {
@@ -53,7 +52,6 @@ class _HomeState extends State<Home> {
         children: const [
           HomePage(),
           SearchPage(),
-          SavedPage(),
           ShoppingPage()
         ],
       )

@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class BottomNavBar extends StatefulWidget {
-  final int SelectedItem;
+  final int selectedItem;
   final Function(int) onTap;
 
-  const BottomNavBar({super.key, required this.SelectedItem, required this.onTap});
+  const BottomNavBar({super.key, required this.selectedItem, required this.onTap});
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -42,7 +41,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
            tabs: const [
              GButton(icon: Icons.home, text: 'Home'),
              GButton(icon: Icons.search, text: 'Search'),
-             GButton(icon: Icons.bookmark, text: 'Saved'),
              GButton(icon: Icons.shopping_cart, text: 'Shopping')
            ],
            onTabChange: widget.onTap,
